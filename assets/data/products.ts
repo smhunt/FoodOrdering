@@ -68,6 +68,12 @@ const products = [
     image:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/6cheese.png',
     price: 13.29,
+  },  {
+    id: 10,
+    name: '6 Cheese',
+    image:
+      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/6cheese.png',
+    price: 13.29,
   },
 ];
 
