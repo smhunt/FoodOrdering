@@ -8,7 +8,7 @@ export default function MenuStack() {
     <Stack >
         <Stack.Screen 
         name="index" 
-        options={{title:'Menu',
+        options={{title:'Admin Menu',
         headerRight: () => (
           <Link href="/(admin)/menu/create" asChild>
             <Pressable>
