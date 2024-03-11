@@ -81,9 +81,9 @@ export const useUpdateProduct = () => {
       }
       return updatedProduct;
     },
-    async onSuccess(_,{id}) {
-      await queryClient.invalidateQueries({ queryKey: ['products'] });
-      await queryClient.invalidateQueries({ queryKey: ['products', id] });
+    async onSuccess(_, { id }) {
+      await queryClient.invalidateQueries(['products']);
+      await queryClient.invalidateQueries(['products', id]);
     },
   });
 };
@@ -93,17 +93,13 @@ export const useDeleteProduct = () => {
 
   return useMutation({
     async mutationFn(id: number) {
-      const { error } = await supabase
-        .from('products')
-        .delete()
-        .eq('id', id);
-
+      const { error } = await supabase.from('products').delete().eq('id', id);
       if (error) {
         throw new Error(error.message);
       }
     },
     async onSuccess() {
-      await queryClient.invalidateQueries({ queryKey: ['products'] });
+      await queryClient.invalidateQueries(['products']);
     },
   });
-}
+};

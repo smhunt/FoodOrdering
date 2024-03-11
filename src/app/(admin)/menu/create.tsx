@@ -117,17 +117,15 @@ const CreateProductScreen = () => {
     };
 
     const onDelete = () => {
-        //console.warn('!!!! Deleting product: ',name);
-        // delete in database
         deleteProduct(id, {
-
-            onSuccess: () => {
-                resetFields();
-                router.replace('/(admin)');
-            }
-        
+          onSuccess: () => {
+            resetFields();
+            router.replace('/(admin)');
+          },
         });
-    }
+      };
+
+      
     const confirmDelete = () => {   
         Alert.alert('Delete Product', 'Are you sure you want to delete this product?', [
             {text: 'Cancel', style: 'cancel'},
