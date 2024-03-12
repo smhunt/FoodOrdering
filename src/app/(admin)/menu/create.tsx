@@ -2,7 +2,7 @@ import Button from '@/src/components/Button';
 import { defaultPizzaImage } from '@/src/components/ProductListItem';
 import Colors from '@/src/constants/Colors';
 import { useEffect, useState } from 'react';
-import {View,Text, StyleSheet, TextInput,Image, KeyboardAvoidingView, Platform, Alert} from 'react-native';
+import {View,Text, StyleSheet, TextInput,KeyboardAvoidingView, Platform, Alert} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { useDeleteProduct, useInsertProduct, useProduct, useUpdateProduct } from '@/src/api/products';
