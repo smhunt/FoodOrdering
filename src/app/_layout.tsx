@@ -11,6 +11,7 @@ import AuthProvider from '../providers/AuthProvider';
 import QueryProvider from '../providers/QueryProvider';
 
 import {StripeProvider} from '@stripe/stripe-react-native';
+import NotificationProvider from '../providers/NotificationProvider';
 
 
 export {
@@ -62,6 +63,7 @@ function RootLayoutNav() {
       >  
           <AuthProvider>
             <QueryProvider>
+              <NotificationProvider>
               <CartProvider>
                 <Stack screenOptions={
                   {
@@ -75,6 +77,7 @@ function RootLayoutNav() {
                   <Stack.Screen name="(auth)" options={{ headerShown: false }} />
                 </Stack>
               </CartProvider>
+              </NotificationProvider>
             </QueryProvider>
           </AuthProvider>
 
