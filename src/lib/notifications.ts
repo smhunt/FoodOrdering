@@ -3,7 +3,7 @@ import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import Constants from 'expo-constants';
 import { supabase } from './supabase';
-import { Tables } from '../database.types';
+import { Tables } from '../types';
 
 export async function registerForPushNotificationsAsync() {
   let token;
@@ -81,5 +81,5 @@ export const notifyUserAboutOrderUpdate = async (order: Tables<'orders'>) => {
   console.log('Order: ', order);
   const title = `Your order is ${order.status}`;
   const body = `Body`;
-  sendPushNotification(token ?? '', title, body);
+  sendPushNotification(token, title, body);
 };
