@@ -81,5 +81,5 @@ export const notifyUserAboutOrderUpdate = async (order: Tables<'orders'>) => {
   console.log('Order: ', order);
   const title = `Your order is ${order.status}`;
   const body = `Body`;
-  sendPushNotification(token, title, body);
+  sendPushNotification(token ?? '', title, body);
 };

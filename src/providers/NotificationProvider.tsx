@@ -1,6 +1,6 @@
 import { PropsWithChildren, useEffect, useRef, useState } from 'react';
 import { registerForPushNotificationsAsync } from '@/src/lib/notifications';
-import { ExpoPushToken } from 'expo-notifications';
+//import { ExpoPushToken } from 'expo-notifications';
 import * as Notifications from 'expo-notifications';
 import { supabase } from '@/src/lib/supabase';
 import { useAuth } from './AuthProvider';
@@ -25,6 +25,8 @@ const NotificationProvider = ({ children }: PropsWithChildren) => {
 
   const savePushToken = async (newToken: string | undefined) => {
     setExpoPushToken(newToken);
+    console.log('profile: ', profile.id);
+    //console.log('newToken: ', expoPushToken);
     if (!newToken) {
       return;
     }
